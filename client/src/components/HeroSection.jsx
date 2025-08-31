@@ -16,6 +16,7 @@ const HeroSection = () => {
                 <ClockIcon className='w-4.5 h-4.5'/> 2h 8m 
             </div>
         </div>
+        <p className=""> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A fuga reiciendis facere <br /> quisquam rerum repudiandae aut deleniti illo iure aspernatur sunt rem <br />amet quidem ab? </p>
     </div>
   )
 }

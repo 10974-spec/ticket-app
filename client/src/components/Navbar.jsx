@@ -34,6 +34,7 @@ const Navbar = () => {
             scrollTo(0, 0); setIsOpen(false);
           }}
           to="/"
+          className="hover:scale-120 "
         >
           Home
         </Link>
@@ -42,6 +43,7 @@ const Navbar = () => {
             scrollTo(0, 0); setIsOpen(false);
           }}
           to="/movies"
+          className="hover:scale-120 "
         >
           Movies
         </Link>
@@ -50,6 +52,7 @@ const Navbar = () => {
             scrollTo(0, 0); setIsOpen(false);
           }}
           to="/"
+          className="hover:scale-120 "
         >
           Theaters
         </Link>
@@ -58,6 +61,7 @@ const Navbar = () => {
             scrollTo(0, 0); setIsOpen(false);
           }}
           to="/"
+          className="hover:scale-120 "
         >
           Releases{" "}
         </Link>
@@ -66,6 +70,7 @@ const Navbar = () => {
             scrollTo(0, 0); setIsOpen(false);
           }}
           to="/favorite"
+          className="hover:scale-120 "
         >
           Favorites
         </Link>

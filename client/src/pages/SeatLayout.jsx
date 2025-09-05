@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { dummyDateTimeData, dummyShowsData } from '../assets/assets';
 import Loading from '../components/Loading';
 import { ClockIcon } from 'lucide-react';
+import isoTimeFormat from '../lib/isoTimeFormat';
+import BlurCircle from '../components/BlurCircle';
 
 const SeatLayout = () => {
 
@@ -35,19 +37,21 @@ useEffect(()=> {
     {/* available timings  */}
    <div className="w-60 bg-primary/10 border-primary/20 rounded-lg py-10 h-max md:sticky md:top-30  ">
  <p className="text-lg font-semibold px-6">Available Timings</p>
- <div className="mt-5 space-y-1">
+ <div  className="mt-5 space-y-1">
   {show.dateTime[date].map((item)=>(
-    <div className={`flex items-center gap-2 px-6 py-2 w-max rounded-r-md cursor-pointer transition ${selectedTime?.time === item.time ? "bg-primary text-white" : "hover:bg-primary/20"}`}>
+    <div key={item.time} onClick={()=> setSelectedTime(item)} className={`flex items-center gap-2 px-6 py-2 w-max rounded-r-md cursor-pointer transition ${selectedTime?.time === item.time ? "bg-primary text-white" : "hover:bg-primary/20"}`}>
       <ClockIcon/>
-      <p className="text-sm">{item.time}</p>
-
+      <p className="text-sm">{ isoTimeFormat(item.time)}</p>
+ 
     </div>
   ))}
  </div>
    </div>
 
    {/* seat layout */}
- <div className=""></div>
+ <div className="relative flex-1 flex flex-col items-center max-md:mt-16">
+  <BlurCircle/>
+ </div>
 
     </div>
   ) : (

@@ -50,10 +50,14 @@ useEffect(()=> {
 
    {/* seat layout */}
  <div className="relative flex-1 flex flex-col items-center max-md:mt-16">
-  <BlurCircle/>
- </div>
+  <BlurCircle top='-100px' left='-100px'/>
+  <BlurCircle bottom='0' right='0'/>
+</div>
 
-    </div>
+
+
+
+</div>
   ) : (
     <Loading/>
   )

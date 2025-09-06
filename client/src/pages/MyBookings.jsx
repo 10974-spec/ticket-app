@@ -66,7 +66,6 @@ const MyBookings = () => {
                Seat Number:
             </span> {item.bookedSeats.join(", ")}
           </p>
-
           </div>
         </div>
       </div>

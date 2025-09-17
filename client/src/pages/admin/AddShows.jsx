@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { dummyShowsData } from '../../assets/assets';
 import Loading from '../../components/Loading';
 import Title from '../../components/admin/Title';
+import { StarIcon } from 'lucide-react';
 
 const AddShows = () => {
 
@@ -27,8 +28,19 @@ const AddShows = () => {
       <div className="overflow-x-auto pb-4">
         <div className="group flex flex-wrap gap-4 mt-4 w-max">
           {nowPlayingMovies.map((movie)=>(
-            <div key={vie.id} className={`relative max-w-40 cursor-pointer group-hover:not-hover:opacity-40 hover:-translate-y-1 transition duration-300`}>
-                
+            <div key={movie.id} className={`relative max-w-40 cursor-pointer group-hover:not-hover:opacity-40 hover:-translate-y-1 transition duration-300`}>
+                <div className="relative rounded-lg overflow-hidden">
+                  <img src={movie.poster_path} alt="" className='w-full object-cover brightness-90' />
+                  <div className="text-sm flex items-center justify-between p-2 bg-black/70 w-full absolute bottom-0 left-0">
+                  <p className="flex items-center gap-1 text-gray-400">
+                    <StarIcon className='w-4 h-4 text-primary fill-primary'/>
+                    {movie.vote_average.toFixed(1)}
+                  </p>
+                  <p className="text-gray-300">
+                    {movie.vote_count} votes
+                  </p>
+                  </div>
+                </div>
             </div>
           ))}
         </div>
